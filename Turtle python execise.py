@@ -1,0 +1,27 @@
+import turtle
+wn = turtle.Screen()
+wn.bgcolor("purple")
+wn.title("Hello, Friends!")
+star=turtle.Turtle()
+star.shape('turtle')
+star.color("blue")
+star.pensize(5)
+for i in range (5):
+    star.forward(200)
+    star.right(144)
+    star.hideturtle()
+    tay = turtle.Turtle()
+    tay.shape("turtle")
+    tay.color("black")
+    tay.hideturtle()
+    tay.penup()
+    tay.goto(55,140)
+    tay.showturtle()
+    tay.pendown()
+    tay.penup()
+    size = 150
+    for i in range(12):
+        tay.stamp()
+        tay.forward(100)
+        tay.right(30)
+        wn.mainloop()
