@@ -1,0 +1,20 @@
+def readposint():
+    """Checks input to see if it is a positive integer"""
+    n = input("Choose a positive intiger: ")
+
+
+    if n == "":
+        print("'{1}' is not a valid positive integer.".format(n))
+    elif int(float(n))!= n:
+        if int(float(n))>1:
+            print("'{1}' is a positive integer.".format(n))
+        else:
+            print("'{1}' is not a valid positive integer.".format(n))
+    elif " " in n:
+        print("'{1}' is not a valid positive integer.".format(n))
+    elif int(n)<=1:
+        print("'{1}' is not a valid positive integer.".format(n))
+
+            
+
+readposint()

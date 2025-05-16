@@ -1,0 +1,9 @@
+def test(cond):
+    if cond:
+        print(test failed.")
+    else:
+        print("Test passed!")
+test(replace("Knack", "a", "o") == "Knock")
+s = "I like to Knack, you can Knack on lots of doors")
+test(replace(s, "a", "o") ==
+    "I like to Knock, you can Knock on lots of doors")

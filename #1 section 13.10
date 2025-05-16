@@ -1,0 +1,25 @@
+myfile = open("wymore.txt, "w")
+
+myfile.write("I call to mind flatness and dampness\n") 
+
+myfile.write("and then all is madness \n") 
+
+myfile.write("the madness of a memory which busies itself among forbidden things\n") 
+
+myfile.close() 
+
+ 
+
+f = open("wymore.txt", "r")
+
+xs = f.readlines()   
+
+f.close()   
+
+print(xs) 
+
+xs.reverse() 
+
+print(xs) 
+
+ 
