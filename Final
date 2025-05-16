@@ -1,1 +1,143 @@
+Taylor Wymore
+final.py
+Tried to make a Pong game using turtle.
 
+
+
+import turtle
+from typing import Any
+
+# Main Screen
+win = turtle.screen()
+win.title("Let's go Pong!"
+win.bgcolor("purple")
+win.setup(width=1000, height=700)
+win.tracer(0)
+
+# Score
+score_1 = 0
+score_2 = 0
+
+# Score display
+pen = turtle.Turtle()
+pen.speed(1)
+pen.color(blue)
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 280)
+pen.write("Player 1: 0 Player 2: 0", align="center", font=("Times New Roman", 25, "normal"))
+
+# Score updating
+update_score(pen, score_1, score_2, high_score):
+pen.clear()
+pen.write(Player 1: {score_1} Player 2: {score_2} High Score: {high__score}", align="center", font=(Times New Roman", 25, "normal"))
+
+# Paddle 1
+paddle_1 = turtle.Turtle()
+paddle_1.speed(1)
+paddle_1.shape("rectangle")
+paddle_1.color("green")
+paddle_1.shapesize(width=5, length=1)
+paddle_1.penup()
+paddle_1.goto(-375, 0)
+
+# Paddle 2
+paddle_2 = turtle.Turtle()
+paddle_2.speed(1)
+paddle_2.shape("rectangle")
+paddle_2.color("green")
+paddle_2.shapesize(width=5, length=1)
+paddle_2.penup()
+paddle_2.goto(375, 0)
+
+# Ball 
+ball = turtle.Turtle()
+ball.speed(1)
+ball.shape("circle")
+ball.color("black")
+ball.penup()
+ball.goto(0, 0)
+ball.dx = 0.50
+ball.dx = 0.50
+
+# For the Paddles to move
+def paddle_1_up():
+    y = paddle_1.ycor()
+    if y < 260:
+        paddle_1.sety(y + 30)
+
+def paddle_1_down():
+    y = paddle_1.ycor()
+    if y > -250:
+        paddle_1.sety(y - 30)
+
+def paddle_2_up():
+    y = paddle_2.ycor()
+    if y < 260:
+        paddle_2.sety(y + 30)
+
+def paddle_2_down():
+    y = paddle_2.ycor()
+    if y > -250:
+        paddle_2.sety(y - 30)
+
+# Loop
+while True:
+    win.update()
+
+# Moving the ball
+ball.setx(ball.xcor() + ball.dx)
+ball.sety(ball.ycor() + ball.dy)
+if ball.ycor() > 300:
+        ball.sety(300)
+        ball.dy *= -2
+
+
+# Border Run in
+if ball.ycor() < -300:
+        ball.sety(-300)
+        ball.dy *= -2
+
+if (350 < ball.xcor() < 360) and \
+       (paddle_2.ycor() - 50 < ball.ycor() < paddle_2.ycor() + 50):
+        ball.setx(350)
+        ball.dx *= -2
+        if (-360 < ball.xcor() < -350) and \
+       (paddle_1.ycor() - 50 < ball.ycor() < paddle_1.ycor() + 50):
+            ball.setx(-350)
+        ball.dx *= -2
+
+# Key bindings
+win.listen()
+win.onkeypress(paddle_1_up, "Up")
+win.onkeypress(paddle_1_down, "Down")
+win.onkeypress(paddle_2_up, "W")
+win.onkeypress(paddle_2_down, "S")
+
+# Scoreboard Update with player winner
+if ball.xcor() > 380:
+         score_1: Any
+ball.goto(0, 0)
+ball.dx *= -1
+            update_scoreboard (turtle.pen, score_1, score_2, high_score) # type: ignore
+
+            if ball.xcor() < -380: 
+                    score_2: Any
+            ball.goto(0, 0)
+            ball.dx *= -1
+            update_scoreboard(turtle.pen, score_1, score_2, high_score) 
+
+            if score_1 >= 10 or score_2 >= 10:
+                winner = "1" if score_1 > score_2 else "2"
+            print("Player {winner} wins")
+            new_score = max(score_1, score_2)
+            if new_high_score(new_score, high_score):
+                 print(" Newest high score!")
+                 write_high_score(new_score)
+        
+# Test Cases
+            def test_update_score_none(self):
+                result = update_score(0, 1, 2)
+
+            def test_move_ball(self):
+                self.assertEqual(move_ball((0, 0), (2, 3)), (2, 3))
