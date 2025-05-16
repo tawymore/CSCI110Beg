@@ -1,14 +1,27 @@
-import string
+story = """In death - no! Even in the grave all is not lost. Else there is no immortlity for man. Arousing from the most profound slumbers, we break the gossamer web of some dream. Yet in a second afterward, (so frail may that web have been) we remember not that we have dreamed.""" 
 
-my_text = """I have a dream that one day down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of interposition and nullification – one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers. I have a dream today."""
+punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~" 
 
-def count_words_with_e(text):
-    translator = str.maketrans('', '', string.punctuation)
-    clean_text = text.translate(translator)
-    words = clean_text.split()
-     count = sum(1 for word in words if 'e' in word.lower())
+def remove_punctuation(s): 
 
-     return count
+    s_sans_punct = "" 
 
-result = count_words_with_e(favorite_paragraph)
-print(f"Number of words containing the letter 'e': {result}")
+    for letter in s: 
+
+        if letter not in punctuation: 
+
+            s_sans_punct += letter 
+
+    return s_sans_punct 
+
+wds = remove_punctuation(story).split() #Removes punctuation and splits the story 
+
+word_count = len(story.split()) #Count the words 
+
+count_e = story.count('e') #Counts how many 'e' are in the story 
+
+percent_of_e = count_e * word_count / 100 #Gets the percentage of 'e' in story. 
+
+print('your story contains',word_count,'words','of which',count_e,"(", percent_of_e,"%",")", 'contain an "e".', wds) 
+
+ 
